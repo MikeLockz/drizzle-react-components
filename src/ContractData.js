@@ -1,6 +1,7 @@
 import { drizzleConnect } from "drizzle-react";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Text } from "rimble-ui";
 
 class ContractData extends Component {
   constructor(props, context) {
@@ -119,10 +120,10 @@ class ContractData extends Component {
     }
 
     return (
-      <span>
+      <Text>
         {`${displayData}`}
         {pendingSpinner}
-      </span>
+      </Text>
     );
   }
 }

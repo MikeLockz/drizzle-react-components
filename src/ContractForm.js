@@ -1,6 +1,7 @@
 import { drizzleConnect } from "drizzle-react";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Input, Button, Form } from "rimble-ui";
 
 class ContractForm extends Component {
   constructor(props, context) {
@@ -83,7 +84,7 @@ class ContractForm extends Component {
     }
 
     return (
-      <form
+      <Form
         className="pure-form pure-form-stacked"
         onSubmit={this.handleSubmit}
       >
@@ -94,7 +95,7 @@ class ContractForm extends Component {
             : input.name;
           // check if input type is struct and if so loop out struct fields as well
           return (
-            <input
+            <Input
               key={input.name}
               type={inputType}
               name={input.name}
@@ -104,15 +105,15 @@ class ContractForm extends Component {
             />
           );
         })}
-        <button
+        <Button
           key="submit"
           className="pure-button"
           type="button"
           onClick={this.handleSubmit}
         >
           Submit
-        </button>
-      </form>
+        </Button>
+      </Form>
     );
   }
 }
