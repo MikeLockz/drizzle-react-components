@@ -1,6 +1,7 @@
 import { drizzleConnect } from "drizzle-react";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Flex, Text, Heading } from "rimble-ui";
 
 class AccountData extends Component {
   constructor(props) {
@@ -41,12 +42,14 @@ class AccountData extends Component {
     }
 
     return (
-      <div>
-        <h4>{address}</h4>
-        <p>
-          {balance} {units}
-        </p>
-      </div>
+      <Flex direction={"column"}>
+        <Heading.h4>{address}</Heading.h4>
+
+        <Flex>
+          <Text.span>{balance}</Text.span>
+          <Text.span>{units}</Text.span>
+        </Flex>
+      </Flex>
     );
   }
 }
